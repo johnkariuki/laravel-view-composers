@@ -1,9 +1,30 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 class SampleController extends Controller
 {
+    /**
+     * Return a list of the latest movies to the
+     * homepage
+     *
+     * @return View
+     */
+    public function index()
+    {
+        $movieList = [
+            'Shawshank redemption',
+            'Forrest Gump',
+            'The Matrix',
+            'Pirates of the Carribean',
+            'Back to the future',
+        ];
+
+        $latestMovie = $movieList[count($movieList) - 1];
+
+        return view('welcome', compact('movieList', 'latestMovie'));
+    }
+
     /**
      * pass an array to the 'foo' view
      * as a second parameter.
