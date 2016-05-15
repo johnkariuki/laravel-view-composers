@@ -20,9 +20,7 @@ class SampleController extends Controller
             'Back to the future',
         ];
 
-        $latestMovie = $movieList[count($movieList) - 1];
-
-        return view('welcome', compact('movieList', 'latestMovie'));
+        return view('welcome', compact('movieList'));
     }
 
     /**
