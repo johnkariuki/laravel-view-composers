@@ -10,6 +10,8 @@ class SampleController extends Controller
      * Return a list of the latest movies to the
      * homepage
      *
+     * @param MovieRepository $movie
+     *
      * @return View
      */
     public function index(MovieRepository $movies)

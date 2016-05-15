@@ -12,6 +12,8 @@ class MovieComposer
     /**
      * Create a movie composer.
      *
+     *  @param MovieRepository $movie
+     *
      * @return void
      */
     public function __construct(MovieRepository $movies)
