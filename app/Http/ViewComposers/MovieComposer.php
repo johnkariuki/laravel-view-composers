@@ -29,6 +29,6 @@ class MovieComposer
      */
     public function compose(View $view)
     {
-        $view->with('latestMovie', $this->movieList[count($this->movieList) - 1]);
+        $view->with('latestMovie', end($this->movieList));
     }
 }
