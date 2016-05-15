@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use \App\Http\Repository\MovieRepository;
+
 class SampleController extends Controller
 {
     /**
@@ -10,15 +12,9 @@ class SampleController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(MovieRepository $movies)
     {
-        $movieList = [
-            'Shawshank redemption',
-            'Forrest Gump',
-            'The Matrix',
-            'Pirates of the Carribean',
-            'Back to the future',
-        ];
+        $movieList = $movies->getMovieList();
 
         return view('welcome', compact('movieList'));
     }

@@ -3,24 +3,20 @@
 namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
+use \App\Http\Repository\MovieRepository;
 
 class MovieComposer
 {
     public $movieList = [];
+
     /**
      * Create a movie composer.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(MovieRepository $movies)
     {
-        $this->movieList = [
-            'Shawshank redemption',
-            'Forrest Gump',
-            'The Matrix',
-            'Pirates of the Carribean',
-            'Back to the future',
-        ];
+        $this->movieList = $movies->getMovieList();
     }
 
     /**
